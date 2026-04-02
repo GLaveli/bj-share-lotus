@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
-/* Red Lotus — tema escuro moderno (Gazelle / tracker).
+/* Red Lotus (paleta roxo escuro) — tema Gazelle / tracker.
    Um único ficheiro: tokens :root + estilos.
    Requer: <meta name="viewport" content="width=device-width, initial-scale=1"> */
 
@@ -57,15 +57,16 @@
 	--color-text-muted: #8b949e;
 	--color-text-faint: #6e7681;
 
-	/* Brand & accents */
+	/* Brand & accents (roxo escuro moderno) */
 	--color-accent: #015a6b;
 	--color-accent-hover: #02736b;
 	--color-accent-soft: rgba(1, 90, 107, 0.35);
-	--color-brand: #d13738;
-	--color-brand-muted: #a83238;
-	--color-link: #58a6ff;
-	--color-link-hover: #79b8ff;
-	--color-danger: #f85149;
+	--color-brand: #5b21b6;
+	--color-brand-muted: #4c1d95;
+	--color-brand-bright: #7c3aed;
+	--color-link: #a78bfa;
+	--color-link-hover: #c4b5fd;
+	--color-danger: #c084fc;
 	--color-success: #3fb950;
 	--color-warning: #d29922;
 
@@ -73,7 +74,7 @@
 	--color-menu-bg: rgba(22, 27, 34, 0.92);
 	--color-menu-border: #30363d;
 	--color-userbar-bg: linear-gradient(180deg, #1a1f26 0%, #161b22 100%);
-	--color-userbar-accent: #d13738;
+	--color-userbar-accent: #5b21b6;
 
 	/* Tables */
 	--color-table-head: #21262d;
@@ -92,21 +93,21 @@
 	--alert-warning-bg: #2d2618;
 	--alert-warning-border: #5c4818;
 	--alert-warning-text: #e3b341;
-	--alert-danger-bg: #2d1b1b;
-	--alert-danger-border: #6c2a2a;
-	--alert-danger-text: #ff7b72;
+	--alert-danger-bg: #2d1b35;
+	--alert-danger-border: #5b21b6;
+	--alert-danger-text: #d8b4fe;
 
-	/* Ratio colours */
-	--ratio-r00: #fd1373;
-	--ratio-r01: #ff1300;
-	--ratio-r02: #ff1300;
-	--ratio-r03: #ff2600;
-	--ratio-r04: #ff4c00;
-	--ratio-r05: #ff5e00;
-	--ratio-r06: #ff5e00;
-	--ratio-r07: #ff7100;
-	--ratio-r08: #ff9700;
-	--ratio-r09: #af7500;
+	/* Ratio colours (escala roxo → âmbar → verde) */
+	--ratio-r00: #4c1d95;
+	--ratio-r01: #5b21b6;
+	--ratio-r02: #5b21b6;
+	--ratio-r03: #6d28d9;
+	--ratio-r04: #7c3aed;
+	--ratio-r05: #8b5cf6;
+	--ratio-r06: #8b5cf6;
+	--ratio-r07: #a78bfa;
+	--ratio-r08: #c4b5fd;
+	--ratio-r09: #b45309;
 	--ratio-r10: #4ce257;
 	--ratio-r20: #49d63c;
 	--ratio-r50: #3cb731;
@@ -117,7 +118,7 @@
 	--color-code-border: #5c4a1f;
 	--color-code-text: #e3c77a;
 
-	--focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+	--focus-ring: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-brand-bright);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -320,12 +321,18 @@ ul.thin li {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Shell: header, content, footer                                             */
+/* Shell: wrapper, header, content, footer                                    */
 /* -------------------------------------------------------------------------- */
+
+#wrapper {
+	width: 100%;
+	min-width: 950px;
+}
 
 #header {
 	width: 100%;
 	padding: 0;
+	position: relative;
 }
 
 #content {
@@ -359,24 +366,28 @@ ul.thin li {
 	margin-bottom: var(--space-3);
 }
 
+/*
+ * HTML real BJ-Share: <a href="..."><div id="logo"></div></a>
+ * (o link envolve o logo; não existe #logo a)
+ */
+#header > a {
+	display: block;
+	border: none;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	text-decoration: none;
+}
+
+#header > a:hover {
+	border: none;
+}
+
 #logo {
 	width: 100%;
 	height: 265px;
 	margin: 0 auto;
 	background: url("https://a.imagem.app/MSWCE.gif") no-repeat center;
-}
-
-#logo a {
-	border: none;
-	width: 800px;
-	height: 200px;
-	display: block;
-	margin: 0 auto;
-	max-width: 100%;
-}
-
-#logo a:hover {
-	border: none;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -497,9 +508,17 @@ ul.thin li {
 	display: block;
 }
 
+/* Setas de submenu (HTML: <a class="symbol">▸</a>) */
+#menudrop a.symbol {
+	display: inline;
+	padding: 0 0 0 4px;
+	font-weight: 700;
+	vertical-align: middle;
+}
+
 /* User bar */
 #userinfo {
-	background: url(https://i.bj-share.info/ec01898d04940834f4312bb56df3f8c6.png) repeat scroll 0 #d13738 !important;
+	background: url(https://i.bj-share.info/ec01898d04940834f4312bb56df3f8c6.png) repeat scroll 0 #4c1d95 !important;
 	position: fixed;
 	top: 32px;
 	left: 0;
@@ -645,6 +664,10 @@ ul.thin li {
 	overflow: hidden;
 }
 
+/*
+ * HTML: .thin > .sidebar (primeiro) > ... ; .main_column (depois)
+ * Sidebar float right + coluna principal à esquerda
+ */
 .widethin {
 	width: 95% !important;
 	margin: 0 auto;
@@ -653,6 +676,7 @@ ul.thin li {
 .main_column {
 	width: 680px;
 	max-width: 100%;
+	overflow: hidden;
 }
 
 .main_column table {
@@ -1080,7 +1104,7 @@ blockquote {
 }
 
 tr.unreadpm {
-	background: rgba(209, 55, 56, 0.15);
+	background: rgba(91, 33, 182, 0.2);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -1412,23 +1436,24 @@ td.smilies_list {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Home slider / container (conflito de ID no HTML original)                  */
+/* Home slider — HTML: <div id="container"><div id="banner-fade">...</div></div> */
 /* -------------------------------------------------------------------------- */
 
 #container {
-	max-width: initial;
+	max-width: 100%;
 	margin: 0 auto;
-	padding-bottom: 80px;
+	padding: 0;
 }
 
-#banner-fade #container,
-#banner-slide #container {
-	float: right;
+/* Slider dentro da sidebar: não flutuar à direita do site inteiro */
+.thin .sidebar #container {
+	width: 100%;
+	max-width: 274px;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+	clear: none;
 	position: relative;
-	width: 274px;
-	padding-top: 4px;
-	padding-bottom: 0;
-	clear: right;
 }
 
 div#banner-fade {
@@ -1803,12 +1828,15 @@ select {
 		max-width: 100%;
 	}
 
-	#banner-fade #container,
-	#banner-slide #container {
+	.thin .sidebar #container {
 		float: none !important;
 		width: 100% !important;
 		max-width: 100%;
-		clear: both;
+		clear: none;
+	}
+
+	#wrapper {
+		min-width: 0;
 	}
 
 	.thin,
