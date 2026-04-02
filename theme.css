@@ -142,20 +142,18 @@ html {
 }
 
 body {
-	min-width: 0;
+	min-width: 950px;
 	width: 100%;
 	min-height: 100vh;
 	font-family: var(--font-sans);
 	font-size: var(--font-size-base);
 	line-height: var(--line-normal);
 	color: var(--color-text);
-	background: var(--color-bg);
+	background: var(--color-bg-muted);
 }
 
 img {
 	border: none;
-	max-width: 100%;
-	height: auto;
 	vertical-align: middle;
 }
 
@@ -263,17 +261,15 @@ textarea {
 }
 
 textarea#quickpost {
-	width: 100%;
-	max-width: 52rem;
-	min-height: 7.75rem;
-	height: auto;
+	width: 626px;
+	height: 124px;
+	max-width: 100%;
 }
 
 iframe.youtube {
-	width: 100%;
-	max-width: 38.5rem;
-	height: auto;
-	aspect-ratio: 16 / 9;
+	width: 615px;
+	height: 370px;
+	max-width: 100%;
 }
 
 element.style {
@@ -314,7 +310,7 @@ span.size9 { font-size: 2.75em; }
 span.size10 { font-size: 3em; }
 
 ul.thin {
-	margin: 0 0 0 1.5rem;
+	margin: 0 0 0 25px;
 	padding: 0;
 }
 
@@ -330,17 +326,15 @@ ul.thin li {
 #header {
 	width: 100%;
 	padding: 0;
-	/* Empurra o banner para baixo das barras fixas (#menu + #userinfo) */
-	padding-top: var(--layout-top);
 }
 
 #content {
-	margin: 0 auto;
+	margin: auto;
+	margin-top: 100px;
 	width: 100%;
-	max-width: 100%;
-	overflow-x: hidden;
+	overflow: hidden;
 	padding-bottom: var(--space-8);
-	background: var(--color-bg);
+	background: url(https://i.bj-share.info/ec01898d04940834f4312bb56df3f8c6.png) repeat scroll 0 #000 !important;
 }
 
 #footer {
@@ -367,19 +361,18 @@ ul.thin li {
 
 #logo {
 	width: 100%;
-	min-height: 12rem;
+	height: 265px;
 	margin: 0 auto;
 	background: url("https://a.imagem.app/MSWCE.gif") no-repeat center;
-	background-size: contain;
 }
 
 #logo a {
-	display: block;
-	width: min(800px, 100%);
-	min-height: 12rem;
-	height: auto;
-	margin-inline: auto;
 	border: none;
+	width: 800px;
+	height: 200px;
+	display: block;
+	margin: 0 auto;
+	max-width: 100%;
 }
 
 #logo a:hover {
@@ -391,132 +384,107 @@ ul.thin li {
 /* -------------------------------------------------------------------------- */
 
 #menu {
+	background-color: #333;
 	position: fixed;
 	top: 0;
 	left: 0;
 	right: 0;
 	z-index: 1001;
 	width: 100%;
-	min-width: 0;
+	min-width: 950px;
 	text-align: center;
-	font-size: var(--font-size-sm);
-	background: var(--color-menu-bg);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	border-bottom: 1px solid var(--color-menu-border);
-	box-shadow: var(--shadow-sm);
+	font-size: 13px;
 }
 
 #centertopmenu {
-	width: min(745px, 100%);
-	margin-inline: auto;
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-	scrollbar-width: thin;
+	width: 745px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 #menu ul li a.active,
 #menu ul li a:focus,
 #menu ul li a:hover {
-	color: var(--color-text);
+	color: #3b3b3b;
 }
 
 #menudrop {
-	float: none;
-	display: inline-block;
 	text-align: center;
 	font-family: var(--font-sans);
-	vertical-align: top;
-	min-width: min(100%, 745px);
+	float: left;
 }
 
 #menudrop ul {
 	list-style: none;
 	position: relative;
-	float: none;
-	display: inline-flex;
-	flex-wrap: nowrap;
+	float: left;
 	margin: 0;
 	padding: 0;
-	white-space: nowrap;
 }
 
 #menudrop ul a {
 	display: block;
 	text-transform: uppercase;
-	color: var(--color-text-muted);
+	color: #adadad;
 	text-decoration: none;
 	font-weight: 700;
-	font-size: 0.6875rem;
-	line-height: 2rem;
-	padding: 0 var(--space-2);
-	letter-spacing: 0.04em;
+	font-size: 11px;
+	line-height: 32px;
 }
 
 #menudrop ul a:hover,
 #menudrop ul a:focus {
-	color: var(--color-text);
+	color: #f7f7f7;
 }
 
 #menudrop ul li {
+	border-left: 1px solid #313131;
+	border-right: 1px solid #393939;
 	position: relative;
-	float: none;
-	display: inline-block;
-	vertical-align: top;
+	float: left;
 	margin: 0;
 	padding: 0;
 	width: 145px;
-	max-width: 40vw;
-	border-left: 1px solid var(--color-menu-border);
-	border-right: 1px solid var(--color-menu-border);
 }
 
 #menudrop ul li.current-menu-item {
-	background: var(--color-surface-hover);
+	background-color: #313131;
 }
 
 #menudrop ul li:hover,
-#menudrop ul li:focus-within {
-	background: var(--color-surface-hover);
+#menudrop ul li:focus {
+	background-color: #4c4c4c;
 }
 
 #menudrop ul ul {
+	background-color: #282828;
+	border: 1px solid #404040;
 	display: none;
 	position: absolute;
 	top: 100%;
 	left: 0;
-	padding: var(--space-1) 0;
+	padding: 0;
 	text-align: left;
-	background: var(--color-surface-raised);
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
-	box-shadow: var(--shadow-md);
-	min-width: 100%;
-	z-index: 10;
 }
-
 #menudrop ul ul li {
+	border-left: 0;
+	border-right: 0;
+	border-bottom: 1px solid #151515;
 	float: none;
-	width: 100%;
-	max-width: none;
-	height: auto;
-	min-height: 2rem;
-	margin: 0;
-	border: none;
-	border-bottom: 1px solid var(--color-border);
+	width: 145px;
+	height: 15px;
+	margin-top: 1.9px;
+	margin-bottom: 0;
 }
 
-#menudrop ul ul li:last-child {
-	border-bottom: none;
+#menudrop ul ul li:hover,
+#menudrop ul ul li:focus {
+	background-color: #2e2e2f;
 }
 
 #menudrop ul ul a {
-	line-height: 1.4;
-	padding: var(--space-2) var(--space-3);
-	white-space: normal;
-	font-weight: 600;
-	text-transform: none;
-	font-size: var(--font-size-sm);
+	line-height: 120%;
+	padding: 0 0 0 8px;
 }
 
 #menudrop ul ul ul {
@@ -525,25 +493,25 @@ ul.thin li {
 }
 
 #menudrop ul li:hover > ul,
-#menudrop ul li:focus-within > ul {
+#menudrop ul li:focus > ul {
 	display: block;
 }
 
 /* User bar */
 #userinfo {
+	background: url(https://i.bj-share.info/ec01898d04940834f4312bb56df3f8c6.png) repeat scroll 0 #d13738 !important;
 	position: fixed;
-	top: var(--header-offset);
+	top: 32px;
 	left: 0;
 	right: 0;
 	z-index: 1000;
 	width: 100%;
-	min-width: 0;
-	padding: var(--space-2) var(--space-3);
+	min-width: 950px;
+	padding: 4px 0;
 	color: #f4f4f4;
 	text-align: center;
-	font-size: var(--font-size-sm);
-	background: url(https://i.bj-share.info/ec01898d04940834f4312bb56df3f8c6.png) repeat scroll 0 var(--color-brand) !important;
-	box-shadow: var(--shadow-md);
+	font-size: small;
+	box-shadow: 0 5px 10px 0 #000;
 }
 
 #userinfo img {
@@ -556,9 +524,9 @@ ul.thin li {
 
 #userinfo ul li {
 	display: inline;
-	line-height: 1.5;
+	line-height: 20px;
 	vertical-align: middle;
-	padding: 0 var(--space-3);
+	padding: 0 15px;
 }
 
 #userinfo a {
@@ -593,23 +561,24 @@ ul.thin li {
 
 /* Search */
 #searchbars {
-	position: relative;
+	position: absolute;
+	top: 165px;
 	width: 100%;
-	min-width: 0;
+	min-width: 950px;
 	text-align: center;
-	padding: var(--space-3) var(--space-3);
-	margin-top: var(--space-4);
+	padding: 4px 0;
+	margin-top: 110px;
 }
 
 #searchbars input {
-	background-color: var(--color-surface);
-	border: 1px solid var(--color-border);
-	padding: var(--space-2) var(--space-2) var(--space-2) 1.75rem;
-	font-size: var(--font-size-sm);
-	color: var(--color-text);
-	box-shadow: var(--shadow-sm);
+	background-color: #111;
+	border: 1px solid #292929;
+	position: relative;
+	padding: 5px 5px 5px 25px;
+	font-size: 95%;
+	color: #f0f0f0;
+	box-shadow: 1px 3px 11px 0 #131313;
 	text-transform: uppercase;
-	max-width: 100%;
 }
 
 #searchbars ul {
@@ -631,12 +600,9 @@ ul.thin li {
 	top: 1em;
 	left: 0;
 	z-index: 1000;
-	background: var(--color-surface-raised);
+	background-color: #595959;
 	width: 12em;
 	margin-top: 12px;
-	border-radius: var(--radius-md);
-	border: 1px solid var(--color-border);
-	box-shadow: var(--shadow-md);
 }
 
 #searchbars ul li ul li {
@@ -647,7 +613,7 @@ ul.thin li {
 }
 
 #searchbars ul li ul li.highlight {
-	background: var(--color-surface-hover);
+	background: #bfbfbf;
 }
 
 #searchbars ul li form {
@@ -669,43 +635,35 @@ ul.thin li {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Layout: thin, columns                                                      */
+/* Layout: thin, columns (Gazelle: float + larguras fixas)                     */
 /* -------------------------------------------------------------------------- */
 
 .thin {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: flex-start;
-	gap: var(--space-5);
-	width: min(100%, 1000px);
+	width: 965px;
+	margin: 0 auto;
 	max-width: 100%;
-	margin-inline: auto;
-	padding: 0 var(--space-4);
+	overflow: hidden;
 }
 
 .widethin {
-	width: min(95%, 100%) !important;
-	margin-inline: auto;
+	width: 95% !important;
+	margin: 0 auto;
 }
 
 .main_column {
-	flex: 1 1 min(100%, 42.5rem);
-	min-width: 0;
-	width: auto;
+	width: 680px;
 	max-width: 100%;
 }
 
 .main_column table {
-	margin-bottom: var(--space-4);
+	margin-bottom: 10px;
 }
 
 .sidebar {
-	flex: 0 1 17rem;
-	float: none;
+	float: right;
 	position: relative;
-	width: 100%;
-	max-width: 17rem;
-	min-width: 0;
+	width: 270px;
+	max-width: 100%;
 }
 
 .sidebar img {
@@ -809,29 +767,13 @@ div.linkbox {
 }
 
 /* -------------------------------------------------------------------------- */
-/* Tables — modern dark, scroll em mobile                                     */
+/* Tables                                                                     */
 /* -------------------------------------------------------------------------- */
-
-.thin,
-.main_column,
-.forum_index,
-.filter_torrents,
-.permissions,
-.box,
-.box2 {
-	overflow-x: auto;
-	-webkit-overflow-scrolling: touch;
-}
 
 table {
 	width: 100%;
-	max-width: 100%;
-	border-collapse: separate;
-	border-spacing: 0;
-	border: 1px solid var(--color-table-border);
-	border-radius: var(--radius-md);
-	overflow: hidden;
-	background: var(--color-table-row);
+	border-collapse: collapse;
+	border: 1px solid var(--color-border-strong);
 	font-size: var(--font-size-sm);
 }
 
@@ -846,21 +788,17 @@ td.colhead,
 
 td,
 th {
-	border: 1px solid var(--color-table-border);
-	padding: var(--space-2) var(--space-3);
+	border: 1px solid #686868;
+	padding: 5px;
 	text-align: left;
 	vertical-align: top;
 }
 
-tbody tr {
-	transition: background 0.12s ease;
-}
-
 #torrent_table {
-	border-collapse: separate;
+	border-collapse: collapse;
 	margin: 0 auto;
-	max-width: 100%;
-	font-size: var(--font-size-sm);
+	max-width: 965px;
+	font-size: 90%;
 }
 
 tr {
@@ -881,21 +819,22 @@ tr {
 }
 
 .forum_index {
-	border: 1px solid var(--color-border);
-	border-radius: var(--radius-md);
-	margin-bottom: var(--space-6);
-	overflow: hidden;
+	border-left: 1px solid #4e4e4e;
+	border-top: 0;
+	border-right: 1px solid #4e4e4e;
+	border-bottom: 1px solid #4e4e4e;
+	margin-bottom: 25px;
 }
 
 .forum_index .rowa td,
 .forum_index .rowb td {
-	padding: var(--space-3);
+	padding: 8px;
 }
 
 .forum_index .colhead {
-	background: var(--color-table-head);
-	font-size: var(--font-size-xs);
-	color: var(--color-text);
+	background-color: #d9f1f9;
+	font-size: 10px;
+	color: #fff;
 }
 
 .post_return .colhead {
@@ -905,7 +844,17 @@ tr {
 }
 
 .colhead {
-	font-weight: 700;
+	background-color: var(--color-bg-muted);
+	font-weight: bold;
+	color: #fff;
+}
+
+td.colhead,
+.colhead td,
+.colhead th {
+	padding-left: 10px;
+	padding-right: 10px;
+	background: #1e1e1e;
 }
 
 .colhead_dark {
@@ -939,10 +888,9 @@ tr {
 }
 
 td.label {
-	font-weight: 700;
+	font-weight: bold;
 	text-align: right;
-	width: 11rem;
-	max-width: 40%;
+	width: 180px;
 }
 
 table.slice {
@@ -1006,8 +954,9 @@ table.slice {
 }
 
 .filter_torrents {
-	width: min(965px, 100%);
-	margin-inline: auto;
+	width: 965px;
+	max-width: 100%;
+	margin: auto;
 }
 
 .filter_torrents .submit {
@@ -1070,14 +1019,14 @@ table.forum_unread {
 }
 
 td.avatar {
-	width: min(15%, 10rem);
-	padding: var(--space-3);
+	width: 15%;
+	padding: 10px;
 	text-align: center;
 }
 
 table.forum_post td.body {
-	padding: var(--space-4) var(--space-3);
-	width: auto;
+	padding: 15px 10px;
+	width: 690px;
 	max-width: 100%;
 }
 
@@ -1467,20 +1416,18 @@ td.smilies_list {
 /* -------------------------------------------------------------------------- */
 
 #container {
-	max-width: min(100%, 1200px);
+	max-width: initial;
 	margin: 0 auto;
-	padding-bottom: 5rem;
-	width: 100%;
-	float: none;
-	clear: both;
+	padding-bottom: 80px;
 }
 
 #banner-fade #container,
 #banner-slide #container {
 	float: right;
 	position: relative;
-	width: min(274px, 100%);
-	padding-top: var(--space-1);
+	width: 274px;
+	padding-top: 4px;
+	padding-bottom: 0;
 	clear: right;
 }
 
@@ -1624,13 +1571,7 @@ p.bjqs-caption {
 }
 
 div.sidebar #event_div {
-	margin-left: 0;
-}
-
-@media (min-width: 961px) {
-	div.sidebar #event_div {
-		margin-left: -232px;
-	}
+	margin-left: -232px;
 }
 
 /* Votes, tags */
@@ -1745,11 +1686,12 @@ select {
 }
 
 .group_image img {
-	width: min(120px, 100%);
-	height: auto;
-	margin: 0 var(--space-3) 0 var(--space-2);
+	width: 120px;
+	height: 170px;
+	margin: 0 15px 0 5px;
 	border-radius: var(--radius-md);
 	cursor: pointer;
+	object-fit: cover;
 }
 
 #settings_sections.fixed {
@@ -1771,19 +1713,47 @@ select {
 /* -------------------------------------------------------------------------- */
 
 @media screen and (max-width: 960px) {
-	.thin {
-		flex-direction: column;
-		padding-inline: var(--space-3);
+	html {
+		-webkit-text-size-adjust: 100%;
 	}
 
-	.sidebar {
-		max-width: 100%;
-		order: 2;
+	body {
+		min-width: 0;
+	}
+
+	#menu,
+	#userinfo,
+	#searchbars {
+		min-width: 0;
+	}
+
+	.thin {
+		width: 100% !important;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.widethin {
+		width: 100% !important;
 	}
 
 	.main_column {
-		order: 1;
-		width: 100%;
+		float: none !important;
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.sidebar {
+		float: none !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 1em;
+	}
+
+	div.sidebar #event_div {
+		margin-left: 0;
 	}
 
 	.permission_container {
@@ -1793,16 +1763,37 @@ select {
 
 	.alertbar {
 		width: 100%;
+		max-width: 100%;
 	}
 
 	#centertopmenu {
+		width: 100%;
+		max-width: 100%;
 		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	#menudrop {
+		float: none;
+		display: inline-block;
+		min-width: min(100%, 745px);
+	}
+
+	#menudrop ul {
+		float: none;
+		white-space: nowrap;
 	}
 
 	#menudrop ul li {
-		max-width: none;
-		width: auto;
-		min-width: min(145px, 100%);
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	iframe.youtube,
+	textarea#quickpost {
+		width: 100% !important;
+		max-width: 100%;
 	}
 
 	.curtain,
@@ -1818,6 +1809,15 @@ select {
 		width: 100% !important;
 		max-width: 100%;
 		clear: both;
+	}
+
+	.thin,
+	.main_column,
+	.box,
+	.box2,
+	.forum_index {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
 	}
 }
 
